@@ -16,7 +16,7 @@ import java.util.List;
 public class App 
 {
     public static void main( String[] args ) throws Exception {
-        lista();
+        teste6();
     }
 
     public static void acha() throws Exception {
@@ -84,6 +84,37 @@ public class App
 
         alunoDAO.remove(aluno);
 
+    }
+
+    public static void teste5() throws Exception{
+        AlunoDAO alunoDAO = new AlunoDAO();
+
+        Aluno aluno = new Aluno();
+        aluno.setNome("Oswaldo");
+        aluno.setCpf("00000012343");
+        aluno.setNumeroMatricula("1231");
+        aluno.setNascimento(LocalDate.of(1997, 10, 25));
+
+        Turma turma = new Turma();
+        turma.setSemestre("2024/1");
+
+        aluno.getTurmas().add(turma);
+
+        alunoDAO.insere(aluno);
+    }
+
+    public static void teste6() throws Exception{
+        AlunoDAO alunoDAO = new AlunoDAO();
+
+        Aluno aluno = new Aluno();
+        aluno.setId(4);
+        aluno.setNome("Oswaldo editado");
+        aluno.setCpf("00000012343");
+        aluno.setNumeroMatricula("1231");
+        aluno.setEndereco("ruas testes");
+        aluno.setNascimento(LocalDate.of(1997, 10, 25));
+
+        alunoDAO.atualiza(aluno);
     }
 
 }

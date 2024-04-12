@@ -3,6 +3,7 @@ package org.example.entidades;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,10 +29,10 @@ public class Aluno {
     @Column(name="nascimento")
     private LocalDate nascimento;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "aluno_turma", joinColumns = @JoinColumn(name="aluno_id"),
                                     inverseJoinColumns = @JoinColumn(name="turma_id"))
-    private List<Turma> turmas;
+    private List<Turma> turmas = new ArrayList<>();
 
     public Aluno(int id, String nome, String numeroMatricula, String cpf, String endereco, LocalDate nascimento) {
         this.id = id;

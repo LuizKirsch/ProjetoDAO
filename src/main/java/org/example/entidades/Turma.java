@@ -2,6 +2,7 @@ package org.example.entidades;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,7 +19,7 @@ public class Turma {
     @ManyToMany
     @JoinTable(name="aluno_turma", joinColumns = @JoinColumn(name="turma_id"),
                                     inverseJoinColumns = @JoinColumn(name="aluno_id"))
-    private List<Aluno> alunos;
+    private List<Aluno> alunos = new ArrayList<>();
 
     public Turma(int id, String semestre) {
         this.id = id;
