@@ -107,7 +107,7 @@ public class App
         AlunoDAO alunoDAO = new AlunoDAO();
 
         Aluno aluno = new Aluno();
-        aluno.setId(4);
+        aluno.setId(6);
         aluno.setNome("Oswaldo editado");
         aluno.setCpf("00000012343");
         aluno.setNumeroMatricula("1231");
